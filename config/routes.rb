@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  mount NikhilWebServices::Api::NikhilWebServicesApi, at: "/nikhilwebservices_api"
+  mount NikhilWebServices::Api::NikhilWebServicesApi, at: "/nikhil_web_services_api"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
