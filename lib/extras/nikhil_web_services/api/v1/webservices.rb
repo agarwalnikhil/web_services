@@ -9,12 +9,36 @@ module NikhilWebServices
 
         resource :create_record do
           post do
-            data = JSON.parse(params[:records])
+            data = params[:records]
             @student = Student.create(name: data)
             if @student.save
               {
                 status: 'success',
-                message:  'Student is saved to PG database'
+                data: "#{params[:records]}",
+                message: "Student #{params[:records]} is saved to PG database"
+              }
+            else
+              {
+                status: 'failure',
+                message: 'Student data is not saved to PG database'
+              }
+            end
+          end
+        end
+        resource :get_record do
+          get do
+            data = params[:id]
+            @student = Student.where(id: data).first
+            if @student.present?
+              {
+                status: 'success',
+                name: "#{@student.name}",
+                message: "Student #{@student.name} is saved to PG database"
+              }
+            else
+              {
+                status: 'failure',
+                message: 'Student data is not saved to PG database'
               }
             end
           end
