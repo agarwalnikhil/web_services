@@ -25,11 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 # For API
-gem 'grape', '0.2.1'
-gem 'rabl'
-gem 'oj'
-gem 'request_store', '1.0.3'
-gem 'httparty'
+gem 'grape', '0.2.1'  #for implementing rest api
+gem 'rabl' #ruby api built language
+gem 'oj' #object json
+gem 'request_store', '1.0.3' 
+gem 'httparty' #to call rest api from other application
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
